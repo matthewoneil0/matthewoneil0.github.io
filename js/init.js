@@ -48,29 +48,6 @@ jQuery(window).on('load', function() {
     }
 });
 
-// Smooth page transitions - fade content only
-jQuery(document).ready(function($) {
-    // Fade in content on page load
-    $('.edrea_tm_content').css('opacity', '1');
-    
-    // Fade out content before navigating
-    $('a').not('[target="_blank"]').not('[href^="#"]').on('click', function(e) {
-        var href = $(this).attr('href');
-        
-        // Skip if it's a special link
-        if (!href || href === '#' || $(this).hasClass('no-transition')) {
-            return;
-        }
-        
-        e.preventDefault();
-        $('.edrea_tm_content').addClass('page-transitioning');
-        
-        setTimeout(function() {
-            window.location.href = href;
-        }, 200);
-    });
-});
-
 // -----------------------------------------------------
 // ---------------   FUNCTIONS    ----------------------
 // -----------------------------------------------------
@@ -749,6 +726,7 @@ function edrea_tm_switcher_opener(){
 	});
 
 }
+
 
 
 
