@@ -27,7 +27,7 @@
 html {
 	overflow-x: hidden;
 	padding: 0px;
-	margin: 0px
+	margin: 0px;
 	background-color: #0c0c0c;
 }
 body{
@@ -2142,4 +2142,5 @@ h6 { font-size: 16px; }
 	.edrea_tm_modalbox .news_popup_details .news_main_title{margin-bottom: 18px;}	
 
 }
+
 
