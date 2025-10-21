@@ -40,7 +40,14 @@ body{
 	font-weight: 400;
 	background-color: #000;
 	color: #A2A2A2;
+	opacity: 1;
+    transition: opacity 0.3s ease-in-out;
 }
+
+body.page-transitioning {
+    opacity: 0;
+}
+
 svg{
 	fill: currentcolor;
 	width: 15px;
@@ -2132,4 +2139,5 @@ h6 { font-size: 16px; }
 	.edrea_tm_modalbox .news_popup_details{padding-left: 20px;padding-right: 20px;}
 	.edrea_tm_modalbox .news_popup_details .news_main_title h3{font-size: 20px;}
 	.edrea_tm_modalbox .news_popup_details .news_main_title{margin-bottom: 18px;}	
+
 }
