@@ -392,6 +392,11 @@ h6 { font-size: 16px; }
 	bottom: 100px;
 	left: 50%;
 	transform: translateX(-50%);
+	opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+.edrea_tm_content.page-transitioning {
+    opacity: 0;
 }
 .edrea_tm_section{
 	position: absolute;
@@ -2142,5 +2147,6 @@ h6 { font-size: 16px; }
 	.edrea_tm_modalbox .news_popup_details .news_main_title{margin-bottom: 18px;}	
 
 }
+
 
 
