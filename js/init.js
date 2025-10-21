@@ -36,6 +36,18 @@ jQuery(document).ready(function(){
 	
 });
 
+// Only show preloader on first visit
+jQuery(window).on('load', function() {
+    if (sessionStorage.getItem('preloaderShown')) {
+        // User has already seen preloader in this session
+        jQuery('#preloader').hide();
+    } else {
+        // First visit - show preloader and remember it
+        sessionStorage.setItem('preloaderShown', 'true');
+        // Your existing preloader code will run
+    }
+});
+
 // -----------------------------------------------------
 // ---------------   FUNCTIONS    ----------------------
 // -----------------------------------------------------
@@ -714,3 +726,4 @@ function edrea_tm_switcher_opener(){
 	});
 
 }
+
