@@ -146,6 +146,12 @@ function edrea_tm_page_transition(){
 	button.on('click',function(){
 		var element 	= jQuery(this);
 		var href		= element.attr('href');
+
+		// Allow normal navigation for full page links
+    	if(!href || href.charAt(0) !== '#') {
+        	return true; // Allow normal navigation for non-anchor links
+    	}
+		
 		if(element.parent().hasClass('edrea_tm_button')){
 			jQuery('.menu .transition_link a[href="'+href+'"]').trigger('click');
 			hashtag();
@@ -706,4 +712,5 @@ function edrea_tm_switcher_opener(){
 		}
 		return false;
 	});
+
 }
