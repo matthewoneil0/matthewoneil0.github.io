@@ -67,7 +67,7 @@ jQuery(document).ready(function($) {
         
         setTimeout(function() {
             window.location.href = href;
-        }, 300); // Match the CSS transition duration
+        }, 150); // Match the CSS transition duration
     });
 });
 
@@ -749,5 +749,6 @@ function edrea_tm_switcher_opener(){
 	});
 
 }
+
 
 
