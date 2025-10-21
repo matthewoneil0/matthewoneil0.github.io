@@ -48,12 +48,12 @@ jQuery(window).on('load', function() {
     }
 });
 
-// Smooth page transitions
+// Smooth page transitions - fade content only
 jQuery(document).ready(function($) {
-    // Fade in on page load
-    $('body').removeClass('page-transitioning');
+    // Fade in content on page load
+    $('.edrea_tm_content').css('opacity', '1');
     
-    // Fade out before navigating
+    // Fade out content before navigating
     $('a').not('[target="_blank"]').not('[href^="#"]').on('click', function(e) {
         var href = $(this).attr('href');
         
@@ -63,11 +63,11 @@ jQuery(document).ready(function($) {
         }
         
         e.preventDefault();
-        $('body').addClass('page-transitioning');
+        $('.edrea_tm_content').addClass('page-transitioning');
         
         setTimeout(function() {
             window.location.href = href;
-        }, 150); // Match the CSS transition duration
+        }, 200);
     });
 });
 
@@ -749,6 +749,7 @@ function edrea_tm_switcher_opener(){
 	});
 
 }
+
 
 
 
