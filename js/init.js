@@ -36,6 +36,18 @@ jQuery(document).ready(function(){
 	
 });
 
+// Only show preloader on first visit
+jQuery(window).on('load', function() {
+    if (sessionStorage.getItem('preloaderShown')) {
+        // User has already seen preloader in this session
+        jQuery('#preloader').hide();
+    } else {
+        // First visit - show preloader and remember it
+        sessionStorage.setItem('preloaderShown', 'true');
+        // Your existing preloader code will run
+    }
+});
+
 // -----------------------------------------------------
 // ---------------   FUNCTIONS    ----------------------
 // -----------------------------------------------------
@@ -146,6 +158,12 @@ function edrea_tm_page_transition(){
 	button.on('click',function(){
 		var element 	= jQuery(this);
 		var href		= element.attr('href');
+
+		// Allow normal navigation for full page links
+    	if(!href || href.charAt(0) !== '#') {
+        	return true; // Allow normal navigation for non-anchor links
+    	}
+		
 		if(element.parent().hasClass('edrea_tm_button')){
 			jQuery('.menu .transition_link a[href="'+href+'"]').trigger('click');
 			hashtag();
@@ -706,4 +724,10 @@ function edrea_tm_switcher_opener(){
 		}
 		return false;
 	});
+
 }
+
+
+
+
+
